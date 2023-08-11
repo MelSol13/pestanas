@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Tabs from './componentes/Tabs'
+import { useState } from 'react';
 
 function App() {
+  const[tabs, setTabs] = useState([
+    {
+      etiqueta: "Pestaña 1",
+      contenido: "Contenido pestaña 1",
+      seleccionada: true
+    },
+    {
+      etiqueta: "Pestaña 2",
+      contenido: "Contenido pestaña 2",
+      seleccionada: false
+    }
+  ]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs tabs={tabs} setTabs = {setTabs}/>
     </div>
   );
 }
